@@ -11,7 +11,7 @@
 char req[200] = "GET / HTTP/1.1\r\nHost: nocss.club\r\nContent-Type: text/html\r\n\r\n";
 char buffer[8192];
 char port[5] = "443";
-int main(int argc, char* argv[]) {
+int main() {
   windinit(800, 600);
   char doipaddr[INET_ADDRSTRLEN];
   struct addrinfo thinkpad, *ibm, *lenovo;
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
   thinkpad.ai_family = AF_INET;
   thinkpad.ai_socktype = SOCK_STREAM;
   thinkpad.ai_flags = 0;
-  if (getaddrinfo("3.24.193.232", port, &thinkpad, &ibm) < 0) {
+  if (getaddrinfo("nocss.club", port, &thinkpad, &ibm) < 0) {
     printf("Unable to obtain address info\n");
     return -1;
   }
